@@ -230,7 +230,13 @@
           <clipPath id="a"><path fill="#fff" d="M0 0h982v239H0z" /></clipPath>
         </defs>
       </svg>
-      <h1>Hello, {{ title() }}</h1>
+      <h1>{{ message }}</h1>
+      <h2>Komponent Random</h2>
+        <app-random [max]="10"></app-random>
+        <app-random [max]="100"></app-random>
+      <h2>Komponent List</h2>
+      <app-list></app-list>
+
       <p>Congratulations! Your app is running. 🎉</p>
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
@@ -339,4 +345,4 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
 
-<router-outlet />
+

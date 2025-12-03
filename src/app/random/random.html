@@ -1,0 +1,18 @@
+<div class="random-box">
+    <h2>Random (max = {{ max }})</h2>
+  
+    <button (click)="generateRandom()">Wylosuj liczbę</button>
+  
+    <div *ngIf="currentNumber !== null">
+      <p>Wylosowana liczba: <strong>{{ currentNumber }}</strong></p>
+  
+      <p
+        [ngStyle]="{
+          'color': isLow === true ? 'green' : (isLow === false ? 'red' : 'black')
+        }"
+      >
+        {{ comment }}
+      </p>
+    </div>
+  </div>
+  

@@ -1,0 +1,10 @@
+.list-box {
+    border: 1px solid #ccc;
+    padding: 12px;
+    margin: 8px 0;
+  }
+  
+  .list-box ul {
+    padding-left: 20px;
+  }
+  

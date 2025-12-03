@@ -1,0 +1,21 @@
+<div class="list-box">
+    <h2>Lista elementów</h2>
+  
+    <form (ngSubmit)="addItem()">
+      <input
+        type="text"
+        [(ngModel)]="newItem"
+        name="item"
+        placeholder="Wpisz tekst"
+      />
+      <button type="submit">Dodaj</button>
+    </form>
+  
+    <ul>
+      <li *ngFor="let item of items; let i = index">
+        {{ item }}
+        <a href="#" (click)="removeItem(i); $event.preventDefault()">usuń</a>
+      </li>
+    </ul>
+  </div>
+  
