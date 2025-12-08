@@ -1,0 +1,56 @@
+section {
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 22px;
+  }
+  
+  form div {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 8px 0;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+    font-size: 15px;
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4a8dff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #1d6fff;
+  }
+  
+  legend {
+    font-weight: 700;
+    margin-top: 10px;
+    margin-bottom: 8px;
+  }
+  
