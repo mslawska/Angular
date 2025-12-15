@@ -1,24 +1,23 @@
 <section>
-    <h2>Lista osób</h2>
-  
-    <button routerLink="/add">Dodaj nową osobę</button>
-  
-    <ul>
-      @for (person of persons; track $index; let i = $index) {
-        <li>
-          <strong>{{ person.firstName }} {{ person.familyName }}</strong>
-          (wiek: {{ person.age || 'brak' }})<br />
-          {{ person.address?.city }}, {{ person.address?.street }},
-          {{ person.address?.postCode }}
-  
-          |
-          <a [routerLink]="['/details', i]">szczegóły</a>
-          |
-          <a href="#" (click)="delete(i); $event.preventDefault()">usuń</a>
-        </li>
-      } @empty {
-        <li>Brak zapisanych osób.</li>
-      }
-    </ul>
-  </section>
-  
+  <h2>Lista osób</h2>
+
+  <button routerLink="/add">Dodaj nową osobę</button>
+
+
+
+  <ul>
+    @for (person of persons; track $index) {
+      <li>
+        <strong>{{ person.firstName }} {{ person.familyName }}</strong>
+        (wiek: {{ person.age || 'brak' }})
+      
+        |
+        <a [routerLink]="['/details', person.id]">szczegóły</a>
+        |
+        <a href="#" (click)="delete(person.id!); $event.preventDefault()">usuń</a>
+      </li>
+    } @empty {
+      <li>Brak zapisanych osób.</li>
+    }
+  </ul>
+</section>

@@ -24,14 +24,19 @@ export class DetailsComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.sub = this.route.paramMap.subscribe((params) => {
       const idParam = params.get('id');
-      const index = idParam ? Number(idParam) : NaN;
-
-      if (!isNaN(index)) {
-        this.person = this.personService.getByIndex(index);
-      } else {
+      const id = idParam ? Number(idParam) : NaN;
+    
+      if (isNaN(id)) {
         this.person = null;
+        return;
       }
+    
+      this.personService.getById(id).subscribe({
+        next: (p) => this.person = p,
+        error: () => this.person = null // np. 404
+      });
     });
+    
   }
 
   ngOnDestroy(): void {

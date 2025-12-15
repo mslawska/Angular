@@ -22,8 +22,13 @@ export class AddPersonComponent {
   ) {}
 
   save(): void {
-    this.personService.addPerson(this.person);
-    this.person = { address: {} }; // wyczyszczenie formularza
-    this.router.navigate(['']);   // powrót na listę
+    this.personService.add(this.person).subscribe({
+      next: () => {
+        this.router.navigateByUrl('/'); 
+      },
+      error: () => alert('Nie udało się zapisać osoby.')
+    });
   }
+  
+  
 }
